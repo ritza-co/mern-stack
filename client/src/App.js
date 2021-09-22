@@ -12,7 +12,7 @@ const DisplayForm = () => {
   const postWithAxios = (e) => {
     e.preventDefault()
     const data = { name: name}
-    axios.post('https://mern-stack-uianow.codecapsules.co.za/api/person', data)
+    axios.post('/api/person', data)
         .then(response => {
           //console.log(response)
           setNameId(response.data.id)
@@ -21,7 +21,7 @@ const DisplayForm = () => {
 
   const getWithAxios = (e) => {
     e.preventDefault()
-    axios.get('https://mern-stack-uianow.codecapsules.co.za/api/person/' + nameId)
+    axios.get('/api/person/' + nameId)
       .then(response => {
         console.log(response)
         setRetrievedName(response.data.name)
